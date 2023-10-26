@@ -22,7 +22,8 @@
         },
         methods: {
             submitForm() {
-                console.log('envia post pra uma api...', this.form)
+                console.log('envia request pra uma api ou para componente pai...', this.form);
+                this.$emit('dadosForm', this.form);
             }
         }
     }

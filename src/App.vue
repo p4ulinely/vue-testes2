@@ -6,7 +6,7 @@
     <hr>
     <ContadorComponente />
     <hr>
-    <FormComponente />
+    <FormComponente v-on:dadosForm="mostraDadosVindoDoFilho"/>
     <hr>
     <p>Todos os direitos reservados. {{ new Date().getFullYear() }} - {{ new Date(time1()) }}</p>
   </div>
@@ -38,6 +38,9 @@
     methods: {
       time1() {
         return Date.now()
+      },
+      mostraDadosVindoDoFilho(dados) {
+        console.log('dados vindo do filho', dados);
       }
     },
     computed: {

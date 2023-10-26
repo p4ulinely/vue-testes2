@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>PrimeiroComponente</p>
+    <h4>PrimeiroComponente</h4>
     <p>msg passada: {{ msgPassada }}</p>
     <div>
       <p>perfil: {{ perfil }}</p>
@@ -19,7 +19,7 @@
         perfil: "perfil de usuário"
       }
     },
-    props: {
+    props: { // tmb pode ser omitido o tipo e passado um array ['msgPassada', 'dados']
       msgPassada: String,
       dados: Object
     }
