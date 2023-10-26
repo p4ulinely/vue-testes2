@@ -8,6 +8,8 @@
     <hr>
     <FormComponente v-on:dadosForm="mostraDadosVindoDoFilho"/>
     <hr>
+    <DadosDeApiComponente />
+    <hr>
     <p>Todos os direitos reservados. {{ new Date().getFullYear() }} - {{ new Date(time1()) }}</p>
   </div>
 </template>
@@ -16,6 +18,7 @@
   import PrimeiroComponente from './components/PrimeiroComponente.vue'
   import ContadorComponente from './components/ContadorComponente.vue';
   import FormComponente from './components/FormComponente.vue';
+  import DadosDeApiComponente from './components/DadosDeApiComponente.vue';
 
   export default {
     name: 'App',
@@ -33,7 +36,8 @@
     components: {
       PrimeiroComponente,
       ContadorComponente,
-      FormComponente
+      FormComponente,
+      DadosDeApiComponente
     },
     methods: {
       time1() {
