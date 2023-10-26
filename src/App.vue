@@ -1,26 +1,49 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <p>APP</p>
+    <hr>
+    <PrimeiroComponente v-bind:msgPassada="msgPassada" v-bind:dados="dados" />
+    <hr>
+    <ContadorComponente />
+    <hr>
+    <FormComponente />
+    <hr>
+    <p>Todos os direitos reservados. {{ new Date().getFullYear() }} - {{ new Date(time1()) }}</p>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import PrimeiroComponente from './components/PrimeiroComponente.vue'
+  import ContadorComponente from './components/ContadorComponente.vue';
+  import FormComponente from './components/FormComponente.vue';
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  export default {
+    name: 'App',
+    data() {
+      return {
+        nome: '',
+        msgPassada: 'mensagem passada do componente App.vue',
+        dados: {
+          avatar: 'https://cdn-icons-png.flaticon.com/512/4645/4645949.png',
+          nomeCompleto: 'Paulinely Morgan',
+          idade: 34
+        }
+      }
+    },
+    components: {
+      PrimeiroComponente,
+      ContadorComponente,
+      FormComponente
+    },
+    methods: {
+      time1() {
+        return Date.now()
+      }
+    },
+    computed: {
+      time2() {
+        return Date.now()
+      }
+    }
   }
-}
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
